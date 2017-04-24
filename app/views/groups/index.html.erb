@@ -1,0 +1,22 @@
+<table class="table table-bordered">
+  <div class="pull-right">
+    <%= link_to("新建健身组", new_group_path, :class => "btn btn-default" ) %>
+  </div>
+  <% @groups.each do |group| %>
+  <tr>
+    <td>
+      <%= link_to(group.title, group_path(group)) %>
+    </td>
+    <td>
+      <%= group.description %>
+    </td>
+    <td>
+      <%= link_to("Edit", edit_group_path(group)) %> |
+      <%= link_to("Destroy", group_path(group), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+    </td>
+    <td>
+      <%= group.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>
