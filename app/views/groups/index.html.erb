@@ -1,7 +1,9 @@
-<table class="table table-bordered">
+
   <div class="pull-right">
     <%= link_to("新建健身组", new_group_path, :class => "btn btn-default" ) %>
   </div>
+
+<table class="table table-bordered">
   <% @groups.each do |group| %>
   <tr>
     <td>
